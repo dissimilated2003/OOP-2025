@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="invert.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tests13.bat">
+      <Filter>Исходные файлы</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="matrix1.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="matrix2.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="empty_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="zero_det.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="blank_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="vinegret_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="lower_lines_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="upper_lines_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="lower_columns_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="upper_columns_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="matrix3.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="matrix4.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="sym_matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="many_tabs.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="testsdjsfhdi.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
