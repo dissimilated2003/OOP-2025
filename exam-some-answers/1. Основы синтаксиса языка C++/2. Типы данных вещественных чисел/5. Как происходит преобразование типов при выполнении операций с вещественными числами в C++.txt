@@ -1,0 +1,84 @@
+1) int + double -> double:
+--------------------------
+int x = 1;
+double y = 2;
+auto f = x + y;
+std::cout << typeid(f).name() << "\n";
+
+2) float + double -> double:
+----------------------------
+float x = 1;
+double y = 2;
+auto f = x + y;
+std::cout << typeid(f).name() << "\n";
+
+иерархия преобразований:
+bool -> char -> short -> int -> unsigned -> long -> float -> double -> long double
+
+3) если есть long double, то все кастуются к long double:
+---------------------------------------------------------
+long double ld = 1.5L;
+double d = 2.5;
+float f = 3.5f;
+int i = 4;
+auto r1 = ld + d; // double -> long double
+auto r2 = ld + f; // float -> long double  
+auto r3 = ld + i; // int -> long double
+std::cout << "r1 - " << typeid(r1).name() << std::endl;
+std::cout << "r2 - " << typeid(r2).name() << std::endl;
+std::cout << "r3 - " << typeid(r3).name() << std::endl;
+
+4) если есть double, то все кастуются к double:
+-----------------------------------------------
+double d = 2.5;
+float f = 3.5f;
+int i = 4;
+auto r4 = d + f; // float -> double
+auto r5 = d + i; // int -> double
+std::cout << "r4 - " << typeid(r4).name() << std::endl;
+std::cout << "r5 - " << typeid(r5).name() << std::endl;
+
+5) если есть float, то все кастуются к float:
+---------------------------------------------
+float f = 3.5f;
+int i = 4;
+auto r6 = f + i; // int -> float
+std::cout << "r6 - " << typeid(r6).name() << std::endl;
+
+6) static_cast<>:
+-----------------
+int x = 10;
+double y = static_cast<double>(x);
+std::cout << y; 			// 10.0
+double yy = static_cast<float>(x); 	// будет тип double, неявное преобразование
+float xx = static_cast<double>(x);	// будет тип float, неявное преобразование
+
+double pi = 3.14;
+int x = pi;			// будет 3, неявное преобразование
+int xx = static_cast<int>(pi);	// тоже будет 3, явное преобразование
+				// дробная часть отбрасывается, какой бы она ни была
+
+7) потеря точности:
+-------------------
+// Большое целое -> float (потеря точности)
+int 	bi = 123456789;
+float 	fi = bi;
+std::cout << std::fixed 	<< std::setprecision(1);
+std::cout << "Start int: " 	<< bi 	<< "\n";		// выведет 123456789
+std::cout << "In float:  " 	<< fi 	<< "\n";		// выведет 123456792.0
+
+// double -> float (потеря точности)
+double 	precise 	= 1.23456789012345;
+float 	less_precise 	= precise;				// теряет уже тут   |
+std::cout << std::setprecision(15);				//                  V
+std::cout << "Start double: " 	<< precise 	<< std::endl;	// выведет 1.234567890123450
+std::cout << "In float:     " 	<< less_precise << std::endl;	// выведет 1.234567880630493
+
+
+
+
+
+
+
+
+

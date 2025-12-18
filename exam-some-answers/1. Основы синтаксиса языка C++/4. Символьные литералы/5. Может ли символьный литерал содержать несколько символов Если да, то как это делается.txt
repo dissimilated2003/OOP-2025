@@ -1,0 +1,5 @@
+может. multicharacter literal:
+int x = 'AB';			// но это уже int
+std::cout << x << "\n";		// выведет 16706
+
+например ещё смайлик

@@ -1,0 +1,8 @@
+принимает значения true (1) и false (0)
+все отличные от нуля значения могут быть преобразованы в true, и только нулевые - в false
+
+вывести в cout как true / false можно так:
+bool b1{1}, b2{0};
+std::cout << std::boolalpha;
+std::cout << b1 << "\n";
+std::cout << b2 << "\n";

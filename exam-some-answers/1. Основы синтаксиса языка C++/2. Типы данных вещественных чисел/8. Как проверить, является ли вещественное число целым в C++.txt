@@ -1,0 +1,20 @@
+// самый простой способ
+bool IsSimple(double t)
+{
+    return t == std::floor(t);	// floor потому что при кастовании double к int отбрасывается дробная часть
+}
+
+bool IsInteger(double t)
+{
+    return std::fabs(t - std::round(t)) < 1e-10;
+}
+
+bool IsIntByModf(double t)
+{
+    if (std::isnan(t) || std::isinf(t)) return false;
+    double intPart{};
+    double fracPart{} = std::modf(t, &intPart);
+
+    double zero = 1e-10;
+    return std::abs(fracPart) < zero || std::abs(fracPart + 1.0) < zero || std::abs(fracPart - 1.0) < zero;
+}

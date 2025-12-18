@@ -1,0 +1,17 @@
+optional неявно преобразуется в bool
+
+1) можно обычной проверкой:
+std::optional<int> maybe = GetValue();
+if (maybe) 
+{
+    // если не std::nullopt, пойдет сюда
+}
+std::nullopt - специальная константа, означающая пустоту
+
+
+2) так же есть метод has_value() - более явный способ:
+if (maybe.has_value()) { ... }
+
+
+3) через сравнение с std::nullopt:
+if (maybe != std::nullopt) { ... }

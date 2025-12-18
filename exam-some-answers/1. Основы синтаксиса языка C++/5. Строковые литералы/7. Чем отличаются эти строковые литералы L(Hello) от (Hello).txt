@@ -1,0 +1,37 @@
+строковые литералы: L"Hello" от "Hello" отличаются так:
+
+обычный строковый литерал:
+--------------------------
+auto narrow 		= "Hello";	// char const* __ptr64
+auto wide 		= L"Hello";	// wchar_t const* __ptr64
+const wchar_t* w 	= L"Hello";	// размер зависит от системы
+    
+UTF строки (C++11):
+-------------------
+const char8_t* utf8 	= u8"Hello"; 	// UTF-8, 1-4 байта на символ
+const char16_t* utf16 	= u"Hello"; 	// UTF-16, 2+ байта на символ  
+const char32_t* utf32 	= U"Hello"; 	// UTF-32, 4 байта на символ
+    
+размеры указателей:
+-------------------
+const char* narrow 	= "narr";
+const wchar_t* wide 	= "wide";
+std::cout << "const char*: " 	<< sizeof(narrow) 	<< " bytes\n";
+std::cout << "const wchar_t*: " << sizeof(wide) 	<< " bytes\n";
+    
+размеры символов:
+-----------------
+std::cout << "char: " 		<< sizeof(char) 	<< " bytes\n";
+std::cout << "wchar_t: " 	<< sizeof(wchar_t) 	<< " bytes\n";
+std::cout << "char16_t: " 	<< sizeof(char16_t) 	<< " bytes\n";
+std::cout << "char32_t: " 	<< sizeof(char32_t) 	<< " bytes\n";
+    
+демонстрация с unicode:
+-----------------------
+const char* narrowRu 	= "Привет";	// мультибайтовые символы
+const wchar_t* wideRu 	= L"Привет";	// широкие символы
+    
+русский текст:
+--------------
+std::cout 	<< "Narrow: " 	<< narrowRu 	<< "\n";
+std::wcout 	<< L"Wide: " 	<< wideRu 	<< "\n";

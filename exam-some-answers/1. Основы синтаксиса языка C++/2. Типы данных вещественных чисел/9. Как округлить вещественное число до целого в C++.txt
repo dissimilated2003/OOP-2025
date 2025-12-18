@@ -1,0 +1,22 @@
+std::floor 	- округление вниз: 		3.4 = 3; 3.7 = 3
+std::ceil 	- округление вверх: 		3.4 = 4; 3.7 = 4
+std::round 	- гибкое округление от 0.5: 	3.4 = 3; 3.7 = 4
+		// в некоторых стандартах к четному
+
+кстати, они реализованы так:
+int Floor(double t)
+{
+    int res = static_cast<int>(t);
+    return (t >= 0 || t == res) ? res : res - 1;
+}
+
+int Ceil(double t)
+{
+    int res = static_cast<int>(t);
+    return (t <= 0 || t == res) ? res : res + 1;
+}
+
+int Round(double t)
+{
+    return (t >= 0) ? static_cast<int>(t + 0.5) : static_cast<int>(t - 0.5);
+}

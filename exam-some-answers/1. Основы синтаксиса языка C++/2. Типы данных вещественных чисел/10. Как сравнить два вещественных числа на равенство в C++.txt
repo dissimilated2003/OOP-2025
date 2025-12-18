@@ -1,0 +1,15 @@
+никогда не использовать == потому что в вещественных 0.1 + 0.2 не равно 0.3!
+пример как надо:
+
+bool IsEqual(double x, double y)
+{
+    return std::abs(x - y) < 1e-10;
+}
+
+int main()
+{
+    double t{}, u{};
+    std::cin >> t >> u;
+    
+    std::cout << (IsEqual(t, u) ? "Equal" : "Different") << "\n";
+}

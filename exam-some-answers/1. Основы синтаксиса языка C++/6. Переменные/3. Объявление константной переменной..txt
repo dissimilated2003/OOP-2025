@@ -1,0 +1,33 @@
+int main()
+{
+//  CONST:
+    const int x = 10;		// это нельзя менять, можно проинициализировать по места
+    const int xx = 2 * 5;	// можно так
+    const int y = getValue()	// можно проинициализировать в рантайме, подходит для любых типов
+
+//  CONSTEXPR (C++11):
+    constexpr int yy = 10;		// значение константы, выражение известно на этапе компиляции
+    constexpr int y1 = 2 * 5;   	// так тоже можно
+    constexpr int y2 = getValue();	// а вот так нельзя, getValue не constexpr
+    // пример: ------------------------------------------------------------
+    constexpr int square(int n) { return n * n; }
+    constexpr int xinsq = square(5);	// = 25, так норм
+    // --------------------------------------------------------------------
+    const int square1(int n) { return n * n; }
+    constexpr int x = square1(5);	// не скомпилируется! нужно чтобы square был constexpr
+    // --------------------------------------------------------------------
+    constexpr int square2(int n) { return n * n; }
+    const int x = square2(5);		// скомпилируется! но компилятор попросит отметить x как constexpr
+
+//  CONSTEVAL (C++20):
+    consteval int square3(int n) { return n * n; }	// должна выполняться только на этапе компиляции
+    constexpr int x = square3(5);			// скомпилируется (строгие compile-time функции)
+    int yff = square3(rand());				// не скомпилируется, не может выполниться в рантайме    
+
+//  CONSTINIT (C++20):
+    constinit int t = 10;		// гарантирует инициализацию до main()
+    constinit int y = getValue();	// getValue() не constexpr
+    constinit int x = 20;		// это хозяйство вообще можно менять
+    x = 25;
+    x++;
+}

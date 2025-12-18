@@ -1,0 +1,23 @@
+// захардкоденный вариант
+bool IsEven(int n)
+{
+    if (n % 2 == 0) return true;
+    return false;
+}
+
+// проще
+bool IsEvenSimpler(int n)
+{
+    return n % 2 == 0;
+}
+
+int main()
+{
+    int z = 23;
+    auto isEven = [](int n)	/* через лямбду */
+    {
+        return n % 2 == 0;
+    };
+
+    std::cout << (isEven(z) ? "Even" : "Odd") << "\n";
+}

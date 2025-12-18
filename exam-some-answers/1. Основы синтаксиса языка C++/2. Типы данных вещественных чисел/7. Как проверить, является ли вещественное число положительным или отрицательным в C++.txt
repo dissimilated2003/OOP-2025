@@ -1,0 +1,20 @@
+void CompByPosZero(double t)
+{
+    std::cout << ((t < 0.0) ? "Neg" : "Pos") << "\n";
+}
+
+// -0.0 считается равным 0.0
+void CompByNegZero(double t)
+{
+    std::cout << ((t > -0.0) ? "Pos" : "Neg") << "\n";
+}
+
+// используя std::signbit
+void SignbitRoute(double t)
+{
+    std::cout << ((std::signbit(t)) ? "Neg" : "Pos") << "\n";
+}
+
+int main()
+{
+}

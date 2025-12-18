@@ -1,0 +1,68 @@
+#include <string>
+#include <vector>
+
+int main()
+{
+// базовые случаи:
+    auto x0 = 1;		// int 
+    auto xm = 'AB';		// int
+    auto xx = 1u;		// unsigned int
+    auto xy = 1ul;		// unsigned long
+    auto xz = 1ull;		// unsighed __int64
+    auto x1 = 23.5;		// double
+    auto x2 = 23.5f;		// float
+    auto x3 = "hello, world!";	// const char* __ptr64
+    auto x4 = 'L';		// char
+
+    auto a1 = 1;		// int
+    auto a2(1);			// int
+    auto a3{1};			// int, до C++17 - class std::initializer_list<int>
+    auto a4 = {1};		// class std::initializer_list<int>
+
+// ссылки и константы:
+    int 	x = 20;
+    const int 	cx = 40;
+    int& 	rx = val;
+    const int& 	crx = cval;
+    //-------------------------
+    auto a1 = x;		// int - копия
+    auto a2 = cx;		// int - константность отбрасывается
+    auto a3 = rx;		// int - ссылка разыменовывается
+    auto a4 = crx;		// int - и константность и ссылка теряются
+    // чтоы сохранить константность или ссылку:
+    auto& a5 = x;		// int&
+    const auto& a6 = x;		// const int&
+    auto&& a7 = x;		// int& (универсальная ссылка)
+    // именованная rvalue ссылка - это lvalue
+    int&& lval = 100;
+    auto&& ar = lval;		// int&
+
+// указатели:
+    int* px = &x;		
+    const int* cpx = &x;
+    int* const pcx = &x;
+    const int* const cpcx = &x;
+    //------------------------------
+    auto s1 = px;	// int* __ptr64
+    auto s2 = cpx;	// int* const __ptr64
+    auto s3 = pcx;	// int* __ptr64 (константность указателя не сохраняется, данных - остаётся)
+    auto s4 = cpcx;	// int* const __ptr64
+
+// строки и массивы
+    auto v1 = "hello"s;		// std::string (C++14)
+    auto v2 = "const char";	// const char* __ptr64
+    //------------------------
+    int arr[10] = {};
+    auto v3 = arr;		// int* (распадается в указатель)
+    auto& v4 = arr;		// int(&)[10] - ссылка на массив 10 элементов
+
+// вывод типов с функций:
+    auto foo() -> int { return 42; }
+    auto res = foo();		// int
+    //------------------------
+    std::vector<int> vec = {1, 2, 3};
+    auto it = vec.begin();	// std::vector<int>::iterator - на самом деле там будет очень страшная срань
+    auto sz = vec.size();	// std::vector<int>::size_type - как правильно size_t = unsigned __int64
+
+    return EXIT_SUCCESS;
+}

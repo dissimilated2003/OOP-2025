@@ -1,0 +1,46 @@
+// через extern ---------------------------------------
+///////////////////////////////////////////////////////
+<file1.cpp>:		// <- cpp!
+int glob = 43; 				// определение
+const int CONSTVAR = 100;
+extern const int EXT_CONST = 20;	// внешнее связывание
+///////////////////////////////////////////////////////
+<main.cpp>:
+extern int glob;		// "где-то есть glob"
+extern const int;
+// extern const int CONSTVAR;	// не сработает, CONSTVAR имеет внутреннее связывание по умолчанию
+int main()
+{
+    std::cout << glob << "\n";
+    std::cout << EXT_CONST << "\n";
+}
+
+
+// через заголовочные файлы ---------------------------
+///////////////////////////////////////////////////////
+<globals.h>:
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+// объявление
+extern int sharedVar;
+extern const double PI;
+
+#endif
+///////////////////////////////////////////////////////
+<globals.cpp>:
+#include "globals.h"
+
+// определение 
+int sharedVar = 10;
+const double PI = 3.1415;
+///////////////////////////////////////////////////////
+<main.cpp>:
+#include "globals.h"
+
+int main()
+{
+    sharedVar = 400; // доступ через extern
+    double someSquareArea = PI * 10 * 10;
+    return 0;
+}

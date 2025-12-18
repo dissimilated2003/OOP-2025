@@ -1,0 +1,25 @@
+bool <идентификатор>{};
+
+bool b{}; 			// false
+bool b = true, b2 = false; 	// можно так, явно
+bool b{true}; 			// true
+bool b(false); 			// false
+bool b = 1, b2 = 0;		// b = true, b2 = false
+bool b{1};			// true
+bool b{2};			// так просто не получится
+bool b = static_cast<bool>(32)	// true, т.к. 32 - отличное от нуля значение, будет false
+
+при передаче в функцию или в блок неявно преобразует любое ненулевое значение к true, 0 - к false
+
+типу bool можно присваивать логические выражения:
+int x = 4, y = 8;
+bool b = x == y;
+bool b = x < y;
+bool b = ++++x == 6;
+bool b = y / 2 >= ----x;
+bool b = (x > y || x + 2 < y) && x != y + 1
+
+== 0 -> false
+!= 0 -> true
+== 0.0 -> false
+!= 0.0 -> true

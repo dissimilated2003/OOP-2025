@@ -1,0 +1,5 @@
+char space = ' '; 	// пробел, тут ничего не нужно
+char tab = '\t';	// табуляция, тут уже нужна escape-последовательность
+char newln = '\n';	// перенос на новую строку
+char ret = '\r';	// возврат каретки
+char backspace = '\b';	// backspace

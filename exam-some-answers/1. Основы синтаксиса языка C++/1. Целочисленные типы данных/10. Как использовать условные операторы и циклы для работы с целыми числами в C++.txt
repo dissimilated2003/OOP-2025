@@ -1,0 +1,72 @@
+// конструкция if
+void ByIf()
+{
+    int myCash = 10;
+    int cost = 100;
+    if (myCash < cost)
+    {
+        std::cout << "You bomj" << "\n";
+    }
+    else
+    {
+        std::cout << "You can buy that item" << "\n";
+    }
+}
+
+// конструкция switch
+void BySwitch()
+{
+    int n = 2;
+    switch(n)
+    {
+    case 1: 
+        std::cout << "case 1" << "\n";
+        break;
+    case 2:
+        std::cout << "case 2" << "\n";
+        break;
+    default:
+        std::cout << "idk what is it" << "\n";
+    }
+}
+
+// нерекурсивная функция для подсчета факториала числа
+int WhileFactorial(int n)
+{
+    if (n < 2) return 1;
+
+    int buff = n;
+    int res = 1;
+    while (buff > 1)
+    {
+	res *= buff;
+        --buff;
+    }
+
+    return res;
+}
+
+int main()
+{
+    // тернарный оператор:
+    // <условие> ? <действия в случае true> : <действия в случае false>
+    // пример: условный вывод
+
+    int n = 5;
+    std::cout << (n < 10 ? "n lower than ten" : "n greater than ten") << "\n";
+
+    // если в main не будет return, компилятор подставит return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+// есть библиотека 
+#include <cmath>
+
+// степени и корни
+double num = 4.0;
+std::cout << std::sqrt(num) 		<< "\n";	// квадратный корень
+double eignt = 8.0;
+double n = 3.0;
+std::cout << std::pow(eight, 1.0 / n)	<< "\n";	// корень n-й степени, корень 3-ей степени из 8 = 2
+std::cout << std::pow(num, 2.0) 	<< "\n";	// возвдение в степень, будет = 16
+std::cout << std::pow(num, -2.0) 	<< "\n";	// отрицательная степень, будет = 0.0625 (1/16)
+std::cout << std::exp(1.0) 		<< "\n";	// e^1
+std::cout << std::log(2.71) 		<< "\n";	// ln(2.71) ~= 1
+
+// геометрия
+std::cout << "\n";
+std::cout << std::hypot(3.0, 4.0)	<< "\n";	// гипотенуза от катетов длиной 3 и 4, 2-мерное пространство
+std::cout << std::hypot(3.0, 4.0, 5.0) 	<< "\n";	// 3-мерная гипотенуза
+
+// тригонометрия
+constexpr double PI = 3.1415; 
+std::cout << "\n";
+std::cout << std::sin(PI/2) 	<< "\n";	// sin П/2
+std::cout << std::asin(1/3) 	<< "\n";	// arcsin 0.(3)
+std::cout << std::cos(0.0) 	<< "\n";	// cos 0
+std::cout << std::acos(0.5) 	<< "\n";	// arccos 0.5
+std::cout << std::tan(PI/4) 	<< "\n";	// tg П/4
+std::cout << std::atan(1.0) 	<< "\n";	// arctg 1
+
+// округление
+double h = 3.5; 
+std::cout << "\n";
+std::cout << std::floor(h) 	<< "\n";	// округление вниз, h = 3
+std::cout << std::ceil(h) 	<< "\n";	// округление вверх, h = 4
+std::cout << std::round(h) 	<< "\n";	// гибкое округление, к ближайшей границе, h = 4
+h = 3.4;
+std::cout << std::round(h) 	<< "\n";	// теперь h = 3
+
+// абсолютное значение
+double na = -5.0; std::cout 	<< "\n";	// non-absolute
+std::cout << std::abs(na) 	<< "\n";	// na = 5.0
+std::cout << std::fabs(na) 	<< "\n";	// то же самое
+
+
+
+
+
+
+
+
+
+
+
+
+

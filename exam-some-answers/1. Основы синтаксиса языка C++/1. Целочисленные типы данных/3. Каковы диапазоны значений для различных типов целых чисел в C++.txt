@@ -1,0 +1,19 @@
+1 byte ===================
+char, signed char 	-> [-128, 127]
+unsigned char 		-> [0, 255]
+2 bytes ==================
+short, signed short	-> [-32768, 32767]
+unsigned short		-> [0, 65535]
+4 bytes ==================
+int, signed int		-> [-(2^31), (2^31) - 1]
+unsigned int		-> [0, (2^32) - 1]
+long, signed long	-> [-(2^31), (2^31) - 1]
+unsigned long 		-> [0, (2^32) - 1]
+8 bytes ==================
+long long		-> [-(2^63), (2^63) - 1]
+unsigned long long	-> [0, (2^64) - 1]
+
+гарантируется следующее соотношение размеров целочисленных типов:
+sizeof(char) <= sizeof(short)
+sizeof(short) <= sizeof(int)
+sizeof(int) <= sizeof(long)

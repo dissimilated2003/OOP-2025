@@ -1,0 +1,8 @@
+значение из std::optional можно получить, там оно не пустое. а чтобы получить значение нужно разыменовать 
+
+std::optional<int> maybe = GetValue();
+if (maybe != std::nullopt)
+{
+    int some = *maybe;
+
+}
